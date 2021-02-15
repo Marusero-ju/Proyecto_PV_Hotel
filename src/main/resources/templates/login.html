@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>proyectofinal</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+<link th:href="@{bootstrap.css}" rel="stylesheet"
+	href="../static/bootstrap.css">
+<script th:src="@{jquery.min.js}" src="../static/jquery-3.5.1.min.js"></script>
+<script th:src="@{bootstrap.js}" src="../static/bootstrap.js"></script>
+
+</head>
+
+<body>
+
+	<h3 class="text-whitesmoke">Login</h3>
+	<p class="text-whitesmoke">A continuación introduzca sus datos</p>
+	<div class="container-content">
+		<form class="margin-t" th:object=${usuarioD} th:action="@{/login}"
+			method="post">
+			<div class="form-group">
+				<input type="text" class="form-control"
+					placeholder="Nombre de usuario" required name="username">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="***"
+					required name=password>
+			</div>
+			<button type="submit" class="form-button button-l margin-b">Iniciar
+				sesión</button>
+
+			<!--<a class="text-darkyellow" href="#"><small>Olvidó su contraseña?</small></a>-->
+			<a class="text-darkyellow" th:href="@{/home/altausuario}"><small>Crear
+					cuenta</small></a>
+		</form>
+		<div th:if="${param.error}" class="alert alert-danger" role="alert">
+			Combinación Invalida de Usuario y Contraseña</div>
+		<div th:if="${param.logout}" class="alert alert-success" role="alert">
+			Ha salido del Sistema. Gracias!</div>
+</body>
+
+</html>

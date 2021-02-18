@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleof.org">
+
+<head>
+<meta charset="utf-8">
+<title>proyect</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/x-icon" href="./favicon.ico">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/font-awesome/5.11.2/css/all.css} " />
+<link th:rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit-=no">
+<link th:rel="stylesheet"
+	th:ref="@{/webjars/font-awesome/5.11.2/css/all.css}">
+</head>
+<body>
+	<section class="container">
+		<div class="row">
+			<h3 class="center-align">Registro</h3>
+			<article class="col s6 offset-s3">
+				<form th:object=${usuariomodelo}
+					th:action=@{/usuario/saveUsuarioModelo} method="post">
+					<div class="input-field">
+						<i class="material-icons prefix">perm_identity</i> <label
+							for="nombre">Nombre</label> <input th:field="*{nombre}"
+							type="text" name="nombre" required value="">
+					</div>
+					<div class="input-field">
+						<i class="material-icons prefix">perm_identity</i> <label
+							for="apellido">Apellido</label> <input th:field="*{apellido}"
+							type="text" name="apellido" required value="">
+					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">person_pin</i> <label
+							for="nombreusuario">Usuario</label> <input
+							th:field="*{nombreusuario}" type="text" name="nombre" required
+							value="" maxlength="10">
+					</div>
+					<div class="input-field">
+						<i class="material-icons prefix">person_pin</i> <label for="tipo">Tipo
+							de Usuario</label> <input th:field="*{tipo}" type="text" name="tipo"
+							required value="" maxlength="15">
+					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">note</i> <label for="dni">DNI</label>
+						<input th:field="*{dni}" type="text" name="dni" required value=""
+							size="10" maxlength="9">
+					</div>
+
+					<div class="input-field">
+						<i class="material-icons prefix">mode_edit</i> <label
+							for="password">Contraseña</label> <input th:field="*{password}"
+							type="password" name="password" value="" maxlength="10" />
+					</div>
+
+					<p class="center-align">
+						<button class="waves-effect waves-light btn" type="submit">
+							<i class="material-icons right">send</i>enviar
+						</button>
+					</p>
+
+				</form>
+
+			</article>
+
+		</div>
+	</section>
+	<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"
+		type="text/javascript" src="webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script th:src="@{/webjars/popper.js/1.16.0/popper.min.js}"
+		type="text/javascript" src="webjars/popper.js/1.16.0/popper.min.js"></script>
+	<script th:src="@{/webjars/bootstrap/4.5.0/js/bootstrap.min.js}"
+		type="text/javascript"
+		src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

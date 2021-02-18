@@ -13,4 +13,5 @@ public interface IUsuarioServicie {
 	public Iterable<Usuario> listar();
 	public void delete(Integer id);
 	public Usuario editar(Integer id) throws Exception;
+	public Object findByNombreUsuario(String nombreUsuario);
 }

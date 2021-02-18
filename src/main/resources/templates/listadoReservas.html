@@ -1,37 +1,37 @@
 <!doctype html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Ejemplo de tabla sencilla</title>
+<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css"
+	href="../static/css/style.css">
+<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css"
+	href="../static/css/bootstrap.css">
+<meta charset=UTF-8>
+<title>MostrarReservas</title>
 </head>
-<body>
-
-	<h1>Listado de cursos</h1>
-
-	<table>
-		<tr>
-			<td><strong>Curso</strong></td>
-			<td><strong>Horas</strong></td>
-			<td><strong>Horario</strong></td>
-		</tr>
-
-		<tr>
-			<td>CSS</td>
-			<td>20</td>
-			<td>16:00 - 20:00</td>
-		</tr>
-
-		<tr>
-			<td>HTML</td>
-			<td>20</td>
-			<td>16:00 - 20:00</td>
-		</tr>
-
-		<tr>
-			<td>Dreamweaver</td>
-			<td>60</td>
-			<td>16:00 - 20:00</td>
-		</tr>
-	</table>
-
+<body class="text-center">
+	<div class="form-group">
+		<form action="Admin" class="form-group">
+			<input type="submit" class="btn btn-lg btn-primary btn-block"
+				value="Volver">
+		</form>
+		<div class="container">
+			<table class="table table-bordered">
+				<tr>
+					<th>Codigo</th>
+					<th>Tipo</th>
+					<th>Descripcion</th>
+					<th>Monto Pagado</th>
+					<th>Usuario</th>
+				</tr>
+				<tr th:each="reserva : ${ReservaModelo}">
+					<td th:text="${ReservaModelo.idreserva}"></td>
+					<td th:text="${reserva.tipo}"></td>
+					<td th:text="${reserva.descripcion}"></td>
+					<td th:text="${ReservaModelo.cliente}"></td>
+					<td th:text="${reserva.User}"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </body>
 </html>

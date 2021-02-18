@@ -45,6 +45,12 @@ public class IUsuarioServiceImp implements IUsuarioServicie {
 		// TODO Auto-generated method stub
 		return iUsuarioRepository.findAll();
 	}
+
+	@Override
+	public Object findByNombreUsuario(String nombreUsuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 

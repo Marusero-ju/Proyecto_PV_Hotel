@@ -107,6 +107,11 @@ public class Reserva {
 	public void setListadohabitacion(List<Habitacion> listadohabitacion) {
 		this.listadohabitacion = listadohabitacion;
 	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 		
 	
 }

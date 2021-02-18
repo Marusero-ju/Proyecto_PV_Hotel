@@ -104,6 +104,14 @@ private static final long serialVersionUID = 1L;
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public String getContraseña() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public String getNombreUsuario() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 		

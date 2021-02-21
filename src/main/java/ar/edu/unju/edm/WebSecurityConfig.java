@@ -37,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		      .permitAll()
 		      .successHandler(autenticacion)
 		      .failureForwardUrl("/login?error=true")
-		      .usernameParameter("username")
+		      .usernameParameter("dni")
 		      .passwordParameter("password")
 		      .and()
 		 .logout()
